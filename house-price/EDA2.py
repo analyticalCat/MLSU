@@ -49,6 +49,10 @@ test = test.drop('BsmtHalfBath', axis = 1 )
 
 #filling NA's with the mean of the column:
 test['SalePrice']=0
+all_Data = train.append(test)
+all_Data = all_Data.fillna(all_data.mean())
+
+
 train = train.fillna(train.mean())
 test = test.fillna(test.mean())
 print("training set shape :" + str(train.shape))
